@@ -7,7 +7,17 @@
     <!--STYLE-->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.countdown.css">
 
+
+
+    <!--SCRIPT-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.plugin.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.countdown-ru.js"></script>
+
+    <script src="js/default.js"></script>
 </head>
 <body>
 <section class="header">
@@ -18,7 +28,23 @@
 </section>
 <section class="nav">
     <div class="nav__wrapper">
-
+        <ul class="nav__list">
+            <li class="nav__item">
+                <i class="nav__icon nav__icon_clean"></i>
+                Уборка
+                <ul class="nav__menu">
+                    <li class="nav__menu-item">Item 1</li>
+                </ul>
+            </li>
+            <li class="nav__item">
+                <i class="nav__icon nav__icon_tech"></i>
+                Прокат техники
+            </li>
+            <li class="nav__item">
+                <i class="nav__icon nav__icon_sale"></i>
+                Продажа техники
+            </li>
+        </ul>
     </div>
 </section>
 <section class="cleaners">
@@ -65,33 +91,28 @@
             <div class="features__item-wrapper">
                 <div class="features__item">
                     <label class="features__checkbox">
-                        <input type="checkbox" name="option1" value="1" checked>
-                        <span></span>
+                        <input type="checkbox" name="option1" value="1" checked><span></span>
                     </label>
                     Обеспечение расходными материалами
                 </div>
                 <div class="features__item">
                     <label class="features__checkbox">
-                        <input type="checkbox" name="option2" value="2" checked>
-                        <span></span>
+                        <input type="checkbox" name="option2" value="2" checked><span></span>
                     </label>
                     Обеспечение инвентарем и техникой</div>
                 <div class="features__item">
                     <label class="features__checkbox">
-                        <input type="checkbox" name="option3" value="3" checked>
-                        <span></span>
+                        <input type="checkbox" name="option3" value="3" checked><span></span>
                     </label>
                     Обеспечение средствами для уборки</div>
                 <div class="features__item">
                     <label class="features__checkbox">
-                        <input type="checkbox" name="option4" value="4" checked>
-                        <span></span>
+                        <input type="checkbox" name="option4" value="4" checked><span></span>
                     </label>
                     Плановая генеральная уборка</div>
                 <div class="features__item">
                     <label class="features__checkbox">
-                        <input type="checkbox" name="option5" value="5" checked>
-                        <span></span>
+                        <input type="checkbox" name="option5" value="5" checked><span></span>
                     </label>
                     Плановая химчистка ковровых покрытий
                 </div>
@@ -114,13 +135,14 @@
                 <div class="features__green-wrapper">
                     <input class="features__input-text" type="text" placeholder="Имя">
                     <input class="features__input-text" type="text" placeholder="e-mail">
-                    <input class="features__input-text" type="text"placeholder="Телефон">
+                    <input class="features__input-text" type="text" placeholder="Телефон">
 
                     <button class="features__submit" type="submit">Получить бонусы</button>
                 </div>
             </div>
         </form>
 </section>
+
 <section class="save">
     <div class="save__wrapper">
         <div class="save__title">Пользуясь нашими услугами — вы экономите</div>
@@ -144,8 +166,382 @@
                 <li class="save__item save__item_benefits">пользуясь нашими услугами, вы будете получать лишь результат, а не заморачиваться наймом и снабжением клинера</li>
             </ul>
         </div>
+        <div class="save__summary-wrapper">
+            <div class="save__summary">
+                <i class="save__summary-icon save__summary-icon_negative"></i>
+                В итоге, вы тратите время на поиски и найм нового
+                сотрудника, самостоятельно закупаете химию
+                и оборудование и берете всю отетсвенность на себя.
+            </div>
+            <div class="save__summary">
+                <i class="save__summary-icon save__summary-icon_benefit"></i>
+                В итоге, вам не нужно тратить дополнительные усилия
+                на поиски и найм клинера в штат, снабжать его всем
+                необходимым и следить за его работой.
+            </div>
+        </div>
     </div>
 </section>
+<section class="gift">
+    <div class="gift__wrapper">
+        <div class="gift__text-block">
+            <span class="gift__title">12-й месяц в подарок</span>
+            <span class="gift__text">
+                Заключая с нами контракт на годовое<br>
+                обслуживание сейчас, вы получаете <br>
+                12-й месяц обслуживания в подарок. <br><br>
+                В пакет будет входить ежедневная уборка, плановая<br>
+                химчистка мебели и ковров, генеральная <br>
+                уборка офиса, а также все <strong>выбранные <br>
+                вами опции.</strong>
+            </span>
+            <div class="gift__timer-wrapper">
+                <div class="gift__timer-text">До конца<br>акции осталось:</div>
+                <div class="gift__timer js-timer"></div>
+            </div>
+        </div>
+        <div class="footer__form-wrapper">
+            <div class="footer__form-title">Закажите визит менеджера<br>-технолога к вам в офис </div>
+
+            <form action="">
+                <input type="text" class="footer__form-field" placeholder="Имя">
+                <input type="text" class="footer__form-field" placeholder="e-mail">
+                <input type="text" class="footer__form-field" placeholder="Телефон">
+
+                <button type="submit" class="footer__form-btn">Получить подарок</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+<section class="foryou">
+    <div class="foryou__wrapper">
+        <div class="foryou__block">
+            <div class="foryou__text-block">
+                <div class="foryou__title">Проводим кастинг клинеров<br>под ваши требования</div>
+                <span class="foryou__text">
+                    Часто компании предъявляют особые требования к полу,<br>
+                    возрасту и внешнему виду обслуживающего персонала,<br>
+                    которые должны соответствовать духу компании и ее<br>
+                    корпоративным стандартам. Особенно, если речь идет об<br>
+                    обслуживании Front-офиса, который посещают клиенты.<br><br>
+                    В таких случаях мы проводим отдельный "кастинг",<br>
+                    где вы сами утверждаете состав уборщиков.
+                </span>
+            </div>
+            <i class="foryou__photo"></i>
+        </div>
+        <div class="foryou__block foryou__block-second">
+            <i class="foryou__photo"></i>
+            <div class="foryou__text-block">
+                <div class="foryou__title">Наводим чистоту в удобное для вас время</div>
+                <span class="foryou__text">
+                    Учитывая особенности графика работы вашей компании, <br>
+                    мы составляем индивидуальный план уборки помещений.<br><br>
+                    Для IT-компаний уборка обычно проводится с 7 до 9 утра, <br>
+                    так как сотрудники обычно работают допоздна и их лучше <br>
+                    не отвлекать. А генеральная уборка офиса - на выходных.<br><br>
+                    Залы кинотеатров же нужно убирать после каждого <br>
+                    сеанса, причем очень быстро и организовано. 
+                </span>
+                <a href="/" class="foryou__btn">Узнать больше</a>
+            </div>
+        </div>
+
+        <div class="foryou__bottom-block">
+            <span class="foryou__bottom-title">Убираем<br>тогда, когда<br>удобно вам</span>
+            <div class="foryou__graph">
+                <i class="foryou__icon foryou__icon_watch"></i>
+                Уборка офиса<br>утром до 9.00
+            </div>
+            <div class="foryou__graph">
+                <i class="foryou__icon foryou__icon_watch-2"></i>
+                Уборка офиса<br>вечером<br>после 18.00
+            </div>
+            <div class="foryou__graph">
+                <i class="foryou__icon foryou__icon_watch-3"></i>
+                Разовая или<br>срочная уборка<br>офисов
+            </div>
+            <div class="foryou__graph">
+                <i class="foryou__icon foryou__icon_note"></i>
+                Уборка офисов<br>на протяжении<br>всего дня
+            </div>
+        </div>
+    </div>
+</section>
+<section class="provide">
+    <div class="provide__wrapper">
+        <div class="provide__text-block">
+            <span class="provide__title">Обеспечиваем всем необходимым</span>
+            <span class="provide__text">
+                Мы обеспечиваем наш персонал профессиональным оборудованием,
+                средствами. Все уборщики работают в униформе.<br><br>
+                Для заведений с спец. требованиями по санитарным нормам
+                (медицинские клиники, детские сады и т.д.) мы обеспечиваем
+                персонал спец. униформой и особым комплектом средств,
+                которые подбираются индивидуально.<br><br>
+                Средства подбираем и согласовываем с вами. Если
+                у вас философия эко-офиса - подберем все необходимое,
+                чтобы <strong>ежедневная уборка офиса</strong> была тоже экологичной. 
+            </span>
+
+            <a href="/" class="provide__btn">Узнать больше</a>
+        </div>
+    </div>
+</section>
+<section class="equipment">
+    <div class="equipment__wrapper">
+        <div class="equipment__column equipment__column_left">
+            <span class="equipment__title">Средства<i class="equipment__property"></i></span>
+            <span class="equipment__text">
+                За 7 лет практики мы перебрали сотни наименований<br>
+                и десятки поставщиков чистящих средств, выбрав<br>
+                только лучшие.<br><br>
+                Дерево, пластик, плитка, офисные столы, техника,<br>
+                флипчарты, окна - все поверхности требуют разных<br>
+                средств и подхода.<br><br>
+                При этом все средства мы покупаем оптом по спец.<br>
+                ценам напрямую у поставщиков. Поэтому они<br>
+                обходятся намного дешевле, чем если бы вы<br>
+                закупали их самостоятельно.
+            </span>
+        </div>
+        <div class="equipment__column">
+            <span class="equipment__title"><i class="equipment__staff"></i>Техника и оборудование</span>
+            <span class="equipment__text">
+                В центральном офисе i-Clean есть более 500 единиц <br>
+                оборудования, которое может потребовать <br>
+                профессиональная уборка офисов. Мы доверяем <br>
+                только проверенной технике Karcher, IPC, Numatic, <br>
+                Becker, Nilfisk, Cleanvac.<br><br>
+                Мы сами обеспечиваем уборщиков <br>
+                всем необходимым для уборки.<br><br>
+                При этом минимальный набор средств для регулярной<br>
+                уборки может постоянно храниться у вас в офисе, а спец.<br>
+                техника для генеральной уборки привозиться отдельно.
+            </span>
+        </div>
+    </div>
+</section>
+<section class="particularity">
+    <div class="particularity__wrapper">
+        <span class="particularity__title">Учитываем мельчайшие детали и особенности каждого помещения </span>
+        <span class="particularity__text">
+            При первичном осмотре объекта наши специалисты-технологи составляют детальный план возможных решений и мероприятий,<br>
+            которые могут потребоваться для поддержания чистоты и порядка. При этом мы постоянно изучаем и внедряем новых <br>
+            технологии и решения на рынке клининга. Это и есть профессиональная уборка офисов от i-Clean.
+        </span>
+        <span class="particularity__subtitle">Вот лишь 2 небольших примера</span>
+        <div class="particularity__column-block">
+            <div class="particularity__column">
+                <span class="particularity__column-title">"Противоударный" пол</span>
+
+                <span class="particularity__column-subtitle particularity__column-subtitle_problem"><i></i>Проблема</span>
+                <div class="particularity__column-text">В складских и логистических комплексах полы<br>быстро изнашиваются. Погрузочная техника,<br>постоянное перетягивание и падение тяжелых<br>предметов оставляют глубокие царапины и выбоины. </div>
+
+                <span class="particularity__column-subtitle particularity__column-subtitle_solution"><i></i>Решение от i-Clean:</span>
+                <div class="particularity__column-text">Раз в 3 месяца во время плановой генеральной уборки<br>полы покрываются высокотехнологичной мастикой<br>TETRA 89-TM, которая обеспечивают надежную защиту<br>и повышает износостойкость пола в разы.</div>
+            </div>
+            <div class="particularity__column">
+                <span class="particularity__column-title">"Отталкивающее" пыль<br>покрытие в переговорке</span>
+
+                <span class="particularity__column-subtitle particularity__column-subtitle_problem"><i></i>Проблема</span>
+                <div class="particularity__column-text">Переговорная комната - лицо компании. В ней в режиме<br>нон-стоп могут проходить совещания и встречи с клиентами.<br>Но статический заряд от ноутбуков, гаджетов и одежды<br>скапливается на столах и притягивает пыль.</div>
+
+                <span class="particularity__column-subtitle particularity__column-subtitle_solution"><i></i>Решение от i-Clean:</span>
+                <div class="particularity__column-text">Каждый день во время плановой уборки все поверхности<br>обрабатываются антистатическим средством KRISTAL Power, которое снимает статический заряд и предотвращает оседание на поверхностях пыли.</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="guaranty">
+    <div class="guaranty__wrapper">
+        <div class="guaranty__column">
+            <span class="guaranty__title">Берем на себя<br>ответственность<br>и даем гарантии</span>
+
+            <a class="guaranty__btn" href="/">Получить консультацию</a>
+        </div>
+        <ul class="guaranty__list">
+            <li class="guaranty__list-item guaranty__list-item_man">
+                <span>Личный менеджер</span>
+                За вами закрепляется персональный менеджер. Любые вопросы связанные<br>
+                с качеством, графиком уборки вы решаете с ним напрямую. Вам не нужно лично<br>
+                контролировать уборщиков, делать им замечания или вступать в дискуссии.
+            </li>
+            <li class="guaranty__list-item guaranty__list-item_quick">
+                <span>Личный менеджер</span>
+                Если вас не устраивает кто-то из уборщиков i-Clean, мы сделаем замену<br>
+                по первому требованию и учтем все ваши комментарии, чтобы избежать<br>
+                подобных инцидентов в будущем.
+            </li>
+            <li class="guaranty__list-item guaranty__list-item_full">
+                <span>Полная ответственность</span>
+                Мы тратим десятки часов на отбор, обучение и подготовку нашего персонала<br>
+                и несем полную ответственность за их профессионализм и корректность поведения.
+
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+<section class="awards">
+    <div class="awards__wrapper">
+        <i class="awards__first"></i>
+        <i class="awards__lider"></i>
+        <span class="awards__text">
+            В 2015 году компания удостоилась наград<br>
+            “Лідер галузі” и “Гордість країни”.<br>
+            <span>Попробуйте и вы те качество и сервис, которые так ценят уже более 3000 наших клиентов.</span>
+        </span>
+    </div>
+</section>
+<section class="feedback">
+    <div class="feedback__wrapper">
+        <span class="feedback__title">Как клиенты оценивают нашу работу</span>
+
+        <div class="feedback__item">
+            <i class="feedback__photo feedback__photo_ivan"></i>
+            <i class="feedback__logo feedback__logo_automan"></i>
+            <span class="feedback__name">Иван Олегович  |  Руководитель "Трейд Груп"</span>
+            <span class="feedback__text">
+                Спасибо за уборку в нашем грязнющем офисе.<br>
+                Мы считаем, что уборка для неудачников, поэтому <br>
+                мы рады, что нашли тех, на кого можно скинуть <br>
+                мытье пола или окон. Будем обращаеться еще не раз.
+            </span>
+        </div>
+        <div class="feedback__item">
+            <i class="feedback__photo feedback__photo_ivan-girl"></i>
+            <i class="feedback__logo feedback__logo_elefant"></i>
+            <span class="feedback__name">Иван Олегович  |  Руководитель "Трейд Груп"</span>
+            <span class="feedback__text">
+                Спасибо за уборку в нашем грязнющем офисе.<br>
+                Мы считаем, что уборка для неудачников, поэтому <br>
+                мы рады, что нашли тех, на кого можно скинуть <br>
+                мытье пола или окон. Будем обращаеться еще не раз.
+            </span>
+        </div>
+        <div class="feedback__item">
+            <i class="feedback__photo feedback__photo_ibirdie"></i>
+            <i class="feedback__logo feedback__logo_ebirdie"></i>
+            <span class="feedback__name">Иван Олегович  |  Руководитель "Трейд Груп"</span>
+            <span class="feedback__text">
+                Спасибо за уборку в нашем грязнющем офисе.<br>
+                Мы считаем, что уборка для неудачников, поэтому <br>
+                мы рады, что нашли тех, на кого можно скинуть <br>
+                мытье пола или окон. Будем обращаеться еще не раз.
+            </span>
+        </div>
+        <div class="feedback__item">
+            <i class="feedback__photo feedback__photo_gerbera"></i>
+            <i class="feedback__logo feedback__logo_gerbera"></i>
+            <span class="feedback__name">Иван Олегович  |  Руководитель "Трейд Груп"</span>
+            <span class="feedback__text">
+                Спасибо за уборку в нашем грязнющем офисе.<br>
+                Мы считаем, что уборка для неудачников, поэтому <br>
+                мы рады, что нашли тех, на кого можно скинуть <br>
+                мытье пола или окон. Будем обращаеться еще не раз.
+            </span>
+        </div>
+
+    </div>
+</section>
+<section class="trust-bottom">
+    <div class="trust-bottom__wrapper">
+        <div class="trust-bottom__title">Компании, с которыми мы работаем</div>
+        <div class="trust-bottom__tab">
+            <div class="trust-bottom__item trust-bottom__item_automan"></div>
+            <div class="trust-bottom__item trust-bottom__item_elefant"></div>
+            <div class="trust-bottom__item trust-bottom__item_ebirdie"></div>
+            <div class="trust-bottom__item trust-bottom__item_gerbera trust-bottom__item_wo-right"></div>
+            <div class="trust-bottom__item trust-bottom__item_city"></div>
+            <div class="trust-bottom__item trust-bottom__item_griffen"></div>
+            <div class="trust-bottom__item trust-bottom__item_yak"></div>
+            <div class="trust-bottom__item trust-bottom__item_krendel trust-bottom__item_wo-right"></div>
+            <div class="trust-bottom__item trust-bottom__item_g trust-bottom__item_wo-bottom"></div>
+            <div class="trust-bottom__item trust-bottom__item_byron trust-bottom__item_wo-bottom"></div>
+            <div class="trust-bottom__item trust-bottom__item_minegigs trust-bottom__item_wo-bottom"></div>
+            <div class="trust-bottom__item trust-bottom__item_carlo  trust-bottom__item_wo-bottom trust-bottom__item_wo-right"></div>
+        </div>
+    </div>
+</section>
+<section class="personal">
+    <div class="personal__wrapper">
+        <div class="personal__text-block">
+            <div class="personal__title">Готов лично гарантировать качество...</div>
+            <div class="personal__name">Александр Чащин, руководитель i-Clean</div>
+            <div class="personal__text">
+                “Я готов лично гарантировать, что вы получите удовольствие от того ощущения
+                чистоты и свежести в доме, которое останется после нашей работы.<br><br>
+                Еще в студенческие годы я ездил в Америку. Именно там я впервые увидел,
+                как работают профессиональные клининговые компании. Переняв этот опыт,
+                я привез лучшие технологии и наработки домой в Украину.<br><br>
+                Я горжусь выстроенной нашей командой системой работы,
+                которую мы совершенствуем ежедневно.“
+            </div>
+        </div>
+    </div>
+</section>
+<section class="facts">
+    <div class="facts__wrapper">
+        <div class="facts__item">Факты про<br>I-Clean</div>
+        <div class="facts__item">
+            <i class="facts__icon facts__icon_7"></i>
+            Нам доверяют<br>
+            чистоту в домах
+
+        </div>
+        <div class="facts__item">
+            <i class="facts__icon facts__icon_50"></i>
+            Человек<br>
+            в штате
+        </div>
+        <div class="facts__item">
+            <i class="facts__icon facts__icon_17"></i>
+            Убираем каждый<br>
+            месяц
+        </div>
+        <div class="facts__item">
+            <i class="facts__icon facts__icon_5000"></i>
+            Убираем каждый<br>
+            месяц
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="footer__wrapper">
+        <div class="footer__text-block">
+            <div class="footer__title">С чего начать сотрудничество?</div>
+            <div class="footer__text">
+                У вас есть множество вопросов, а нам нужно осмотреть<br>
+                помещение и уточнить ряд деталей, чтобы подготовить<br>
+                продуманное коммерческое предложение.<br><br>
+                Поэтому мы начинаем сотрудничество<br>
+                с личного визита нашего менеджера к вам в офис.<br><br>
+                Всего за 40 минут он ответит на все вопросы, расскажет<br>
+                о том, как мы работаем и сразу же оценит все нюансы<br>
+                "на месте". А если вам нужна срочная уборка офисов<br>
+                - мы сразу же приступим к работе.
+            </div>
+        </div>
+        <div class="footer__form-wrapper">
+            <div class="footer__form-title">Закажите визит менеджера<br>-технолога к вам в офис </div>
+
+            <form action="">
+                <input type="text" class="footer__form-field" placeholder="Имя">
+                <input type="text" class="footer__form-field" placeholder="e-mail">
+                <input type="text" class="footer__form-field" placeholder="Телефон">
+
+                <button type="submit" class="footer__form-btn">Получить подарок</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+<script>
+    $('.js-timer').countdown({until: 50000, format: 'HMS'});
+</script>
 </body>
 </html>
 
