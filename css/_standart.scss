@@ -69,19 +69,36 @@ body {
     }
     &__item {
         position: relative;
-        width: 245px;
+        //width: 245px;
         border-right: 1px solid rgba(117, 176, 46, 0.2);
 
-        font: 600 14px/65px Arial, sans-serif;
+        padding: 0 20px;
+
+        font: 600 14px/45px Arial, sans-serif;
         color: #ffffff;
+        text-align: center;
 
         &:first-child {
             border-left: 1px solid rgba(117, 176, 46, 0.2);
         }
-        &:hover {
-            background: rgba(255,255,255,0.2);
+    }
+    &__link {
+        display: block;
+        position: relative;
+        margin: 10px;
+        //background: #ffffff;
+        color: #282828;
+        text-align: left;
+        padding: 0 15px;
 
-            .nav__menu {
+        cursor: pointer;
+
+        border-radius: 5px 5px 0 0;
+
+        &:hover {
+            background: #ffffff;
+
+            & > .nav__menu {
                 display: block;
                 position: absolute;
                 top: 100%;
@@ -91,21 +108,32 @@ body {
     }
     &__menu {
         display: none;
+        width: 100%;
+        z-index: 5;
     }
     &__menu-item {
         display: block;
-        width: 245px;
-        height: 30px;
+        //width: 100%;
         background: #ffffff;
+
+        //margin: 0 -15px;
 
         font: 400 14px/30px Arial, sans-serif;
         color: #282828;
+        text-decoration: none;
+        padding-left: 10px;
+
+        cursor: pointer;
+
+        &:hover {
+            background: #808080;
+        }
     }
     &__icon {
         display: block;
         float: left;
 
-        margin: 20px 18px 0 28px;
+        margin: 11px 18px 0 0;
 
         &_clean {
             width: 24px;
@@ -122,7 +150,7 @@ body {
             height: 15px;
             background: url("../img/nav-sale.png") 0 0 no-repeat;
 
-            margin-top: 24px;
+            margin-top: 16px;
         }
     }
 }
