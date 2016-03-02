@@ -29,6 +29,7 @@ body {
   width: 136px;
   height: 68px;
   background: url("../img/logo.png");
+  background-size: cover;
   margin: 0 0 0 11px;
 }
 .header__phone {
@@ -1080,5 +1081,62 @@ body {
 @media screen and (max-width: 1440px) {
   .wrapper, .header__wrapper, .nav__wrapper, .cleaners__wrapper, .trust__wrapper, .features__item-wrapper, .features__green-wrapper, .save__wrapper, .gift__wrapper, .foryou__wrapper, .provide__wrapper, .equipment__wrapper, .particularity__wrapper, .guaranty__wrapper, .awards__wrapper, .feedback__wrapper, .trust-bottom__wrapper, .personal__wrapper, .facts__wrapper, .footer__wrapper {
     width: 960px;
+  }
+
+  .header {
+    height: 95px;
+  }
+  .header__logo {
+    width: 118px;
+    height: 59px;
+  }
+  .header__phone {
+    font-size: 32px;
+  }
+
+  .cleaners {
+    height: 465px;
+    background-size: cover;
+  }
+  .cleaners__title {
+    font-size: 56px;
+    padding-top: 80px;
+  }
+  .cleaners__subtitle {
+    font-size: 20px;
+  }
+  .cleaners__subtitle span {
+    font-size: 36px;
+  }
+  .cleaners__list {
+    padding-left: 24px;
+    margin-top: 36px;
+  }
+  .cleaners__list-item {
+    width: 320px;
+    font-size: 14px;
+  }
+
+  .trust {
+    height: 120px;
+  }
+
+  .features__title {
+    font-size: 29px;
+    line-height: 29px;
+  }
+  .features__subtitle {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .features__item {
+    line-height: 35px;
+  }
+  .features__item-wrapper {
+    height: 205px;
+  }
+  .features__checkbox {
+    vertical-align: top;
+    margin-top: 4px;
   }
 }

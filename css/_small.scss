@@ -3,4 +3,63 @@
     .wrapper {
         width: 960px;
     }
+    .header {
+        height: 95px;
+
+        &__logo {
+            width: 118px;
+            height: 59px;
+        }
+        &__phone {
+            font-size: 32px;
+        }
+    }
+    .cleaners {
+        height: 465px;
+        background-size: cover;
+        &__title {
+            font-size: 56px;
+            padding-top: 80px;
+        }
+        &__subtitle {
+            font-size: 20px;
+            span {
+                font-size: 36px;
+            }
+        }
+        &__list {
+            padding-left: 24px;
+            margin-top: 36px;
+        }
+        &__list-item {
+            width: 320px;
+            font-size: 14px;
+        }
+    }
+    .trust {
+        height: 120px;
+    }
+    .features {
+
+        &__title {
+            font-size: 29px;
+            line-height: 29px;
+        }
+        &__subtitle {
+            font-size: 22px;
+            line-height: 35px;
+        }
+        &__item {
+            line-height: 35px;
+        }
+        &__item-wrapper {
+            height: 205px;
+        }
+        &__checkbox {
+            vertical-align: top;
+            margin-top: 4px;
+        }
+
+    }
+
 }
